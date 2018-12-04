@@ -10,13 +10,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bighorndam.Main">
    <children>
-      <TabPane prefHeight="800.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="800.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab text="Live Data">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <LineChart layoutX="14.0" layoutY="14.0" title="Moving 30 Day Average Water Level">
+                        <LineChart fx:id="thirtyDayAvg" layoutX="14.0" layoutY="14.0" title="Moving 30 Day Average Water Level">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -26,6 +26,14 @@
                         </LineChart>
                         <TextArea layoutX="13.0" layoutY="666.0" prefHeight="91.0" prefWidth="1254.0" />
                         <TextField layoutX="14.0" layoutY="634.0" prefHeight="25.0" prefWidth="267.0" text="Messages" />
+                        <BubbleChart layoutX="521.0" layoutY="28.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BubbleChart>
                      </children>
                   </AnchorPane>
             </content>

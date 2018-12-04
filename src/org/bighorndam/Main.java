@@ -18,11 +18,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        System.out.println("aaa");
+        System.out.println("Running: Big Horn Dam User Centre\n");
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        System.out.println("bbb");
+        System.out.println("Connection Established\n");
         primaryStage.setTitle("Bighorn Dam User Centre");
-        primaryStage.setScene(new Scene(root, 900, 600));
+        primaryStage.setScene(new Scene(root, 1250, 800));
         primaryStage.show();
 
     }

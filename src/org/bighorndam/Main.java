@@ -22,7 +22,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         System.out.println("Connection Established\n");
         primaryStage.setTitle("Bighorn Dam User Centre");
-        primaryStage.setScene(new Scene(root, 1250, 800));
+        primaryStage.setScene(new Scene(root, 1275, 800));
         primaryStage.show();
 
     }

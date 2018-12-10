@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a5bf049-995f-4cee-b6c9-f954682bc2ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/org/bighorndam/GUI.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/bighorndam/GUIController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/bighorndam/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/bighorndam/Main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/bighorndam/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/bighorndam/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="3a5bf049-995f-4cee-b6c9-f954682bc2ff" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,18 +19,19 @@
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="7" />
-          <entry key="java" value="8" />
+          <entry key="java" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="8" />
+          <entry key="JAVA" value="9" />
           <entry key="XML" value="7" />
         </counts>
       </usages-collector>
@@ -54,13 +50,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/bighorndam/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/org/model/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -90,6 +83,7 @@
         <option value="$PROJECT_DIR$/src/org/bighorndam/Main.fxml" />
         <option value="$PROJECT_DIR$/src/org/bighorndam/GUIController.java" />
         <option value="$PROJECT_DIR$/src/org/bighorndam/Main.java" />
+        <option value="$PROJECT_DIR$/src/org/model/Main.java" />
       </list>
     </option>
   </component>
@@ -105,6 +99,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -117,22 +112,15 @@
               <item name="BighornDam_UserCentre" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BighornDam_UserCentre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BighornDam_UserCentre" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="bighorndam" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543957390049" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/org/model/Main.java" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -202,7 +190,7 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.26066098" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -265,8 +253,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SECpractice/src/org/viewer/GUI.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../SECpractice/src/org/model/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -276,31 +264,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/bighorndam/Main.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/bighorndam/GUIController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/bighorndam/GUI.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/bighorndam/GUIController.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/bighorndam/GUI.fxml" />
     <entry file="file://$PROJECT_DIR$/src/org/bighorndam/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -308,6 +280,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/model/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
         </state>
       </provider>
     </entry>

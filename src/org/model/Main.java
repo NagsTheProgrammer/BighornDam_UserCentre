@@ -1,4 +1,4 @@
-package org.bighorndam;
+package org.model;
 
 //import java.io.IOException;
 

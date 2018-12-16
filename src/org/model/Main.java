@@ -1,4 +1,4 @@
-package org.bighorndam;
+package org.model;
 
 //import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception
     {
         System.out.println("Running: Big Horn Dam User Centre\n");
-        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../view/Main.fxml"));
         System.out.println("Connection Established\n");
         primaryStage.setTitle("Bighorn Dam User Centre");
         primaryStage.setScene(new Scene(root, 1275, 800));

@@ -24,8 +24,11 @@ import javafx.scene.control.Menu;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.MenuItem;
+import javafx.scene.chart.ScatterChart;
 
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.Accordion;
+import javafx.scene.control.Label;
 
 
 public class GUIController
@@ -35,7 +38,13 @@ public class GUIController
     private Pane paneHome, paneModCon, pane3, pane4;
 
     @FXML
-    private AnchorPane anchr_1;
+    private AnchorPane anchr_1, anchrLeftHome;
+
+    @FXML
+    private Label statusLabel;
+
+    @FXML
+    private Accordion accLeftModCon;
 
     @FXML
     private Button btnHome, btnModCon, btn3, btn4, setThirtyDayAvg;
@@ -55,19 +64,29 @@ public class GUIController
     @FXML
     private CategoryAxis thirtyDayAvgX;
 
+    @FXML
+    private ScatterChart<?, ?> modScat;
+
+
     public void setPane(ActionEvent e){
         System.out.println("You clicked on a button");
 
-        if (e.getSource() == btnHome)
+        if (e.getSource() == btnHome) {
             paneHome.toFront();
-        else if (e.getSource() == btnModCon)
+            anchrLeftHome.toFront();
+        }
+        else if (e.getSource() == btnModCon){
             paneModCon.toFront();
-        else if (e.getSource() == btn3)
+            accLeftModCon.toFront();
+        }
+        else if (e.getSource() == btn3) {
             pane3.toFront();
-        else if (e.getSource() == btn4)
+            anchrLeftHome.toFront();
+        }
+        else if (e.getSource() == btn4) {
             pane4.toFront();
-        else if (e.getSource() == mnu_file_btn)
-            System.out.println("you clicked a menu button");
+            anchrLeftHome.toFront();
+        }
     }
 
     @FXML
@@ -76,17 +95,51 @@ public class GUIController
             System.out.println("setChart clicked");
             XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
             //populating the series with data
-            series.getData().add(new XYChart.Data("1", 23));
-            thirtyDayAvg.getData().addAll(series);
+            series.getData().add(new XYChart.Data<String, Integer>("1", 23));
+            series.getData().add(new XYChart.Data<String, Integer>("2", 24));
+            series.getData().add(new XYChart.Data<String, Integer>("3", 28));
+            series.getData().add(new XYChart.Data<String, Integer>("4", 21));
+            series.getData().add(new XYChart.Data<String, Integer>("5", 20));
+            //thirtyDayAvg.getData().addAll(series);
         }
     }
 
     public void initialize(){
-        System.out.println("Initialize");
-        XYChart.Series<String, Integer> series = new XYChart.Series<String, Integer>();
-        //populating the series with data
-        series.getData().add(new XYChart.Data<String, Integer>("Hello", 23));
-        //thirtyDayAvg.getData().addAll(series);
+
+        // Thirty Day Avg
+        System.out.println("Initialize Thirty Day Avg Chart");
+        XYChart.Series<String, Integer> seriesThirtyDayAvg = new XYChart.Series<String, Integer>();
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("1", 23));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("2", 24));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("3", 28));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("4", 21));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("5", 20));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("6", 23));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("7", 24));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("8", 28));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("9", 21));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("10", 20));
+        thirtyDayAvg.getData().addAll(seriesThirtyDayAvg);
+
+        // Status Label
+        System.out.println("Initialize Status Label");
+        statusLabel.setText("Set This");
+
+
+        // Module Scatter Plot
+        /*System.out.println("Initialize Thirty Day Avg Chart");
+        XYChart.Series<String, Integer> seriesThirtyDayAvg = new XYChart.Series<String, Integer>();
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("1", 23));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("2", 24));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("3", 28));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("4", 21));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("5", 20));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("6", 23));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("7", 24));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("8", 28));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("9", 21));
+        seriesThirtyDayAvg.getData().add(new XYChart.Data<String, Integer>("10", 20));
+        thirtyDayAvg.getData().addAll(seriesThirtyDayAvg);*/
     }
 
 

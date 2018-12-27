@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a5bf049-995f-4cee-b6c9-f954682bc2ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/database/loginClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/model/dataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BighornDam_UserCentre/org/controller/GUIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BighornDam_UserCentre/org/controller/GUIController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BighornDam_UserCentre/org/view/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BighornDam_UserCentre/org/view/Main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/controller/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/controller/GUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/model/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/view/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/view/Main.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/model/parser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,24 +30,24 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="9" />
-          <entry key="java" value="15" />
+          <entry key="java" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="15" />
+          <entry key="JAVA" value="16" />
           <entry key="XML" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fxml" value="38" />
-          <entry key="java" value="3737" />
+          <entry key="java" value="3742" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3737" />
+          <entry key="JAVA" value="3742" />
           <entry key="XML" value="38" />
         </counts>
       </usages-collector>
@@ -65,20 +58,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/model/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
-              <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/model/dataManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/model/dataManager.java">
+        <entry file="file://$PROJECT_DIR$/src/org/model/parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="68">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -140,6 +139,7 @@
         <option value="$PROJECT_DIR$/src/org/model/Main.java" />
         <option value="$PROJECT_DIR$/src/org/controller/GUIController.java" />
         <option value="$PROJECT_DIR$/src/org/model/dataManager.java" />
+        <option value="$PROJECT_DIR$/src/org/model/parser.java" />
       </list>
     </option>
   </component>
@@ -203,7 +203,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545814553974" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545940884071" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -365,16 +365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/model/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/controller/GUIController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
@@ -387,10 +377,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/model/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/model/dataManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/model/parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>

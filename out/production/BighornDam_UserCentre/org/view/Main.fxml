@@ -58,14 +58,15 @@
          <children>
             <Pane fx:id="pane3" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #228B22;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Pane fx:id="pane4" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #00FFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Pane fx:id="paneModCon" prefHeight="751.0" prefWidth="1101.0" style="-fx-background-color: #87CEFA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             <Pane fx:id="paneHome" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #FF6347;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <LineChart fx:id="thirtyDayAvg" layoutX="14.0" layoutY="85.0" legendVisible="false" style="-fx-background-color: #FFFFFF;" title="Moving Thirty Day Average">
+                  <LineChart fx:id="brTDA" layoutX="14.0" layoutY="85.0" legendVisible="false" style="-fx-background-color: #FFFFFF;" title="Moving Thirty Day Average">
                     <xAxis>
-                      <CategoryAxis fx:id="thirtyDayAvgX" />
+                      <NumberAxis fx:id="brTDAx" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis fx:id="ThirtyDayAvgY" side="LEFT" />
+                      <NumberAxis fx:id="brTDAy" side="LEFT" />
                     </yAxis>
                   </LineChart>
                   <Label layoutX="14.0" layoutY="6.0" text="Home Page">
@@ -73,17 +74,16 @@
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <Button fx:id="setThirtyDayAvg" layoutX="14.0" layoutY="492.0" mnemonicParsing="false" onAction="#setChart" text="Set Chart" />
-                  <ScatterChart fx:id="modScat" layoutX="551.0" layoutY="85.0" style="-fx-background-color: #FFFFFF;" title="Module Level Scatter Plot">
+                  <Button fx:id="setThirtyDayAvg" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#setChart" text="Read File" />
+                  <StackedBarChart fx:id="stkbrTDA" layoutX="551.0" layoutY="85.0" style="-fx-background-color: #FFFFFF;" title="Module Thirty Day Avg">
                     <xAxis>
-                      <CategoryAxis fx:id="modScatX" side="BOTTOM" />
+                      <CategoryAxis fx:id="stkbrTDAx" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis fx:id="modScatY" side="LEFT" />
+                      <NumberAxis fx:id="stkbrTDAy" side="LEFT" />
                     </yAxis>
-                  </ScatterChart>
+                  </StackedBarChart>
                </children></Pane>
-            <Pane fx:id="paneModCon" prefHeight="751.0" prefWidth="1101.0" style="-fx-background-color: #87CEFA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="751.0" prefHeight="25.0" prefWidth="1275.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">

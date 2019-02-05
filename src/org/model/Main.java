@@ -52,8 +52,12 @@ public class Main extends Application {
         }
     }*/
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
+
+        /*parser pars = new parser("D:\\1. Programming\\GitHub\\BighornDam_UserCentre\\BighornDam_UserCentre\\src\\org\\model\\data.txt");
+        int foo[][] = new int[700][2];
+        foo = pars.readThirtyDayTotal();
+        pars.printArray(foo);*/
 
         //createNewDatabase("test.db");
 

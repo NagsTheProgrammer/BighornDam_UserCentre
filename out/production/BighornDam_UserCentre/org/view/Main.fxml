@@ -24,7 +24,6 @@
             </AnchorPane>
             <AnchorPane>
                <children>
-                  <AnchorPane fx:id="anchrLeftHome" prefHeight="226.0" prefWidth="174.0" style="-fx-background-color: #808080;" />
                   <Accordion fx:id="accLeftModCon" prefHeight="226.0" prefWidth="232.0">
                     <panes>
                       <TitledPane animated="false" prefHeight="126.0" prefWidth="169.0" text="Receiver Node">
@@ -50,6 +49,7 @@
                         </TitledPane>
                     </panes>
                   </Accordion>
+                  <AnchorPane fx:id="anchrLeftHome" prefHeight="226.0" prefWidth="174.0" style="-fx-background-color: #808080;" />
                </children>
             </AnchorPane>
          </children>

@@ -82,7 +82,7 @@ public class GUIController
         }
         else if (e.getSource() == btnModCon){
             paneModCon.toFront();
-            accLeftModCon.toFront();
+            //accLeftModCon.toFront();
         }
         else if (e.getSource() == btn3) {
             pane3.toFront();
@@ -101,7 +101,7 @@ public class GUIController
 
             // parse file
             parser prs = new parser("D:\\1. Programming\\GitHub\\BighornDam_UserCentre\\BighornDam_UserCentre\\src\\org\\model\\data.txt");
-            int arr[][] = prs.readThirtyDayTotal();
+            int arr[][] = prs.parseThirtyDayTotal();
             int meas = prs.getMeasPerDay();
             int tran = prs.getNumOfTrans();
 
@@ -110,7 +110,7 @@ public class GUIController
             // set chart axis
             brTDAx.setAutoRanging(false);
             brTDAx.setLowerBound(0);
-            brTDAx.setUpperBound(30);
+            brTDAx.setUpperBound(29);
             brTDAx.setTickUnit(1);
             /*brTDAy.setAutoRanging(false);
             brTDAy.setLowerBound(0);
@@ -142,32 +142,42 @@ public class GUIController
             stkbrTDAy.setLowerBound(0);
             stkbrTDAy.setUpperBound(1000);
             stkbrTDAy.setTickUnit(1000);*/
+            stkbrTDA.setLegendVisible(true);
 
             // set series data
             XYChart.Series<String, Integer> seriesTDHigh = new XYChart.Series<>();
-            XYChart.Series<Integer, Integer> seriesTDLow = new XYChart.Series<>();
-            XYChart.Series<Integer, Integer> seriesTDAvg = new XYChart.Series<>();
+            XYChart.Series<String, Integer> seriesTDLow = new XYChart.Series<>();
+            XYChart.Series<String, Integer> seriesTDAvg = new XYChart.Series<>();
+
+            seriesTDHigh.setName("30 Day High");
+            seriesTDLow.setName("30 Day Low");
+            seriesTDAvg.setName("30 Day Average");
 
             int tranID[] = new int[tran];
-            boolean match = false;
+            boolean match = true;
             int count = 0;
             for (int z = 0; z < tran*3; z++){
                 for (int x = 0; x < tran; x++){
-                    if (arr[z][0] != tranID[x])
-                        match = true;
+                    if (arr[z][0] == tranID[x])
+                        match = false;
                 }
                 if (match){
                     tranID[count] = arr[z][0];
                     count++;
                 }
+                match = true;
             }
 
             count = 0;
-            int max = 0;
-            // thirty day high
+            int max, min, total, avg;
+            // thirty day high / low
             for (int z = 0; z < tran; z++){
                 int temp[] = new int[30*meas];
-                for (int x = 0; x < meas*tran*30; x++){
+                count = 0;
+                total = 0;
+                max = 0;
+                min = arr[z][1];
+                for (int x = 0; x < arr.length; x++){
                     if (arr[x][0] == tranID[z]) {
                         temp[count] = arr[x][1];
                         count++;
@@ -176,13 +186,47 @@ public class GUIController
                 for (int y = 0; y < temp.length; y++){
                     if (temp[y] > max)
                         max = temp[y];
+                    //System.out.println(max);
+                    if (temp[y] < min)
+                        min = temp[y];
+                    //System.out.println(min);
+                    total += temp[y];
                 }
-                seriesThirtyDayAvg.getData().add(new XYChart.Data<>(tranID[z], max));
-                max = 0;
+                avg = total / temp.length;
+                seriesTDHigh.getData().add(new XYChart.Data<String, Integer>(String.valueOf(tranID[z]), max - min - avg));
+                seriesTDLow.getData().add(new XYChart.Data<String, Integer>(String.valueOf(tranID[z]), min));
+                seriesTDAvg.getData().add(new XYChart.Data<String, Integer>(String.valueOf(tranID[z]), avg - min));
             }
+
+            /*int arg[][][] = prs.parseNodeDataAnnual();
+            int max, min, total, avg;
+            for (int x = 0; x < arg.length; x++) {
+                min = 600;
+                max = 0;
+                total = 0;
+                for (int y = 0; y < arg[x][1].length; y++) {
+                    if (arg[x][1][y] > max)
+                        max = arg[x][1][y];
+                    //System.out.println(max);
+                    if (arg[x][1][y] < min)
+                        min = arg[x][1][y];
+                    //System.out.println(min);
+                    total += arg[x][1][y];
+                }
+                avg = total / arg[x][1].length;
+//                System.out.println();
+//                System.out.println(total);
+//                System.out.println(arg[x][1].length);
+//                System.out.println(avg);
+                seriesTDHigh.getData().add(new XYChart.Data<String, Integer>(String.valueOf(arg[x][0][0]), max - min - avg));
+                seriesTDLow.getData().add(new XYChart.Data<String, Integer>(String.valueOf(arg[x][0][0]), min));
+                seriesTDAvg.getData().add(new XYChart.Data<String, Integer>(String.valueOf(arg[x][0][0]), avg - min));
+                System.out.printf("\n\nMax is %d, min is %d, avg is %d", max, min, avg);
+            }*/
+
+            stkbrTDA.getData().add(seriesTDLow);
+            stkbrTDA.getData().add(seriesTDAvg);
             stkbrTDA.getData().add(seriesTDHigh);
-
-
         }
     }
 

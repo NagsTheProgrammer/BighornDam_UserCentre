@@ -96,18 +96,54 @@ public class parser {
 
          for (int x = 0; x < numOfTrans; x++){
              count = 0;
-             System.out.println();
-             System.out.println(ret[x][0][0]);
+//             System.out.println();
+//             System.out.println(ret[x][0][0]);
              for (int y = 0; y < annualTotal; y++){
                 if (arr[y][0] == ret[x][0][0]){
                     ret[x][1][count] = arr[y][1];
-                    System.out.print(ret[x][1][count] + " ");
+//                    System.out.print(ret[x][1][count] + " ");
                     count++;
                 }
              }
          }
 
          return ret;
+    }
+
+    public static int[][][] parseNodeDataThirtyDays(){
+        int ret[][][] = new int[numOfTrans][2][thirtyDayTotal/numOfTrans];
+        int arr[][] = parseAnnualTotal();
+
+        boolean match = true;
+        int count = 0;
+        for (int z = 0; z < numOfTrans*3; z++){
+            for (int x = 0; x < numOfTrans; x++){
+                if (arr[z][0] == ret[x][0][0])
+                    match = false;
+            }
+            if (match){
+                ret[count][0][0] = arr[z][0];
+                //System.out.println(ret[count][0][0]);
+                count++;
+            }
+            match = true;
+        }
+        System.out.println();
+
+        for (int x = 0; x < numOfTrans; x++){
+            count = 0;
+//            System.out.println();
+//            System.out.println(ret[x][0][0]);
+            for (int y = 0; y < thirtyDayTotal; y++){
+                if (arr[y][0] == ret[x][0][0]){
+                    ret[x][1][count] = arr[y][1];
+//                    System.out.print(ret[x][1][count] + " ");
+                    count++;
+                }
+            }
+        }
+
+        return ret;
     }
 
     public static void printArray(int[][] arr){

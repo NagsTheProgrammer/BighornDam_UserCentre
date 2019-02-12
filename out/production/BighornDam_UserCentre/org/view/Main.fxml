@@ -12,9 +12,9 @@
 
 <AnchorPane fx:id="anchr_1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1275.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.GUIController">
    <children>
-      <VBox layoutY="24.0" prefHeight="751.0" prefWidth="154.0" style="-fx-background-color: #808080;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="24.0">
+      <VBox layoutY="24.0" prefHeight="751.0" prefWidth="154.0" style="-fx-background-color: #4D4847;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="24.0">
          <children>
-            <AnchorPane prefHeight="427.0" prefWidth="274.0">
+            <AnchorPane prefHeight="427.0" prefWidth="274.0" style="-fx-background-color: #4D4847;">
                <children>
                   <Button fx:id="btnHome" layoutY="5.0" mnemonicParsing="false" onAction="#setPane" prefHeight="7.0" prefWidth="174.0" text="Home" />
                   <Button fx:id="btnModCon" layoutY="35.0" mnemonicParsing="false" onAction="#setPane" prefHeight="5.0" prefWidth="174.0" text="Module Control" />
@@ -49,19 +49,19 @@
                         </TitledPane>
                     </panes>
                   </Accordion>
-                  <AnchorPane fx:id="anchrLeftHome" prefHeight="226.0" prefWidth="174.0" style="-fx-background-color: #808080;" />
+                  <AnchorPane fx:id="anchrLeftHome" prefHeight="226.0" prefWidth="174.0" style="-fx-background-color: #4D4847;" />
                </children>
             </AnchorPane>
          </children>
       </VBox>
       <AnchorPane layoutX="174.0" layoutY="24.0" prefHeight="751.0" prefWidth="1101.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
          <children>
-            <Pane fx:id="pane3" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #228B22;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="pane4" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #00FFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="paneModCon" prefHeight="751.0" prefWidth="1101.0" style="-fx-background-color: #87CEFA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="paneHome" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #FF6347;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Pane fx:id="pane3" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #D7DDDD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Pane fx:id="paneModCon" prefHeight="751.0" prefWidth="1101.0" style="-fx-background-color: #D7DDDD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Pane fx:id="pane4" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #D7DDDD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Pane fx:id="paneHome" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #8BAAAD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <LineChart fx:id="brTDA" layoutX="14.0" layoutY="85.0" legendVisible="false" style="-fx-background-color: #FFFFFF;" title="Moving Thirty Day Average">
+                  <LineChart fx:id="lcTDA" layoutX="14.0" layoutY="85.0" legendVisible="false" style="-fx-background-color: #FFFFFF;" title="Moving Thirty Day Average">
                     <xAxis>
                       <NumberAxis fx:id="brTDAx" />
                     </xAxis>
@@ -69,12 +69,12 @@
                       <NumberAxis fx:id="brTDAy" side="LEFT" />
                     </yAxis>
                   </LineChart>
-                  <Label layoutX="14.0" layoutY="6.0" text="Home Page">
+                  <Label layoutX="14.0" layoutY="6.0" text="Home Page" textFill="#1c3738">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <Button fx:id="setThirtyDayAvg" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#setChart" text="Read File" />
+                  <Button fx:id="btnReadFile" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#readFile" text="Read File" />
                   <StackedBarChart fx:id="stkbrTDA" layoutX="551.0" layoutY="85.0" style="-fx-background-color: #FFFFFF;" title="Module Thirty Day Avg">
                     <xAxis>
                       <CategoryAxis fx:id="stkbrTDAx" />
@@ -86,7 +86,7 @@
                </children></Pane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="751.0" prefHeight="25.0" prefWidth="1275.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane layoutY="775.0" prefHeight="25.0" prefWidth="1275.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label fx:id="statusLabel" text="Status Label">
                <padding>

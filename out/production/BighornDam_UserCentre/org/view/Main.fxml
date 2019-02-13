@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
@@ -17,9 +19,9 @@
             <AnchorPane prefHeight="427.0" prefWidth="274.0" style="-fx-background-color: #4D4847;">
                <children>
                   <Button fx:id="btnHome" layoutY="5.0" mnemonicParsing="false" onAction="#setPane" prefHeight="7.0" prefWidth="174.0" text="Home" />
-                  <Button fx:id="btnModCon" layoutY="35.0" mnemonicParsing="false" onAction="#setPane" prefHeight="5.0" prefWidth="174.0" text="Module Control" />
-                  <Button fx:id="btn3" layoutY="65.0" mnemonicParsing="false" onAction="#setPane" prefHeight="21.0" prefWidth="174.0" text="Button 3" />
-                  <Button fx:id="btn4" layoutY="95.0" mnemonicParsing="false" onAction="#setPane" prefHeight="25.0" prefWidth="174.0" text="Button 4" />
+                  <Button fx:id="btnModView" layoutY="35.0" mnemonicParsing="false" onAction="#setPane" prefHeight="5.0" prefWidth="174.0" text="Module View" />
+                  <Button fx:id="btnMapView" layoutY="65.0" mnemonicParsing="false" onAction="#setPane" prefHeight="21.0" prefWidth="174.0" text="Map View" />
+                  <Button fx:id="btnSettings" layoutY="95.0" mnemonicParsing="false" onAction="#setPane" prefHeight="25.0" prefWidth="174.0" text="Settings" />
                </children>
             </AnchorPane>
             <AnchorPane>
@@ -56,34 +58,90 @@
       </VBox>
       <AnchorPane layoutX="174.0" layoutY="24.0" prefHeight="751.0" prefWidth="1101.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
          <children>
-            <Pane fx:id="pane3" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #D7DDDD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="paneModCon" prefHeight="751.0" prefWidth="1101.0" style="-fx-background-color: #D7DDDD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="pane4" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #D7DDDD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="paneHome" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #8BAAAD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Pane fx:id="paneMapView" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #8BAAAD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <LineChart fx:id="lcTDA" layoutX="14.0" layoutY="85.0" legendVisible="false" style="-fx-background-color: #FFFFFF;" title="Moving Thirty Day Average">
-                    <xAxis>
-                      <NumberAxis fx:id="brTDAx" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis fx:id="brTDAy" side="LEFT" />
-                    </yAxis>
-                  </LineChart>
-                  <Label layoutX="14.0" layoutY="6.0" text="Home Page" textFill="#1c3738">
+                  <Label layoutX="14.0" layoutY="14.0" text="Map View" textFill="#1c3738">
                      <font>
                         <Font size="30.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btnReadFile" layoutX="14.0" layoutY="51.0" mnemonicParsing="false" onAction="#readFile" text="Read File" />
-                  <StackedBarChart fx:id="stkbrTDA" layoutX="551.0" layoutY="85.0" style="-fx-background-color: #FFFFFF;" title="Module Thirty Day Avg">
-                    <xAxis>
-                      <CategoryAxis fx:id="stkbrTDAx" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis fx:id="stkbrTDAy" side="LEFT" />
-                    </yAxis>
+                  <Circle fill="#ff1f1f" layoutX="688.0" layoutY="222.0" radius="13.0" stroke="#7a7a7a00" strokeType="INSIDE" />
+                  <ImageView fitHeight="679.0" fitWidth="1070.0" layoutX="82.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Bighorn%20Dam%20-%20Concentrated.PNG" />
+                     </image>
+                  </ImageView>
+                  <Circle fill="#ff1f1f" layoutX="492.0" layoutY="326.0" radius="13.0" stroke="#7a7a7a00" strokeType="INSIDE" />
+                  <Circle fill="#ff1f1f" layoutX="582.0" layoutY="379.0" radius="13.0" stroke="#7a7a7a00" strokeType="INSIDE" />
+                  <Circle fill="#ff1f1f" layoutX="620.0" layoutY="181.0" radius="13.0" stroke="#7a7a7a00" strokeType="INSIDE" />
+               </children>
+            </Pane>
+            <Pane fx:id="paneSettings" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #8BAAAD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Settings" textFill="#1c3738">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnReadFile" layoutX="239.0" layoutY="275.0" mnemonicParsing="false" onAction="#changeSettings" prefHeight="25.0" prefWidth="92.0" text="Read File" />
+                  <TextField fx:id="txtfldFilePath" layoutX="14.0" layoutY="241.0" prefHeight="25.0" prefWidth="217.0" promptText="Enter File Path Here" />
+                  <TextField fx:id="txtfldNumOfMod" layoutX="14.0" layoutY="120.0" prefHeight="25.0" prefWidth="123.0" promptText="Number of Modules" />
+                  <Label layoutX="14.0" layoutY="75.0" prefHeight="45.0" prefWidth="364.0" text="Module Settings" textAlignment="CENTER" textFill="#1c3738" underline="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtfldNumOfMeas" layoutX="14.0" layoutY="156.0" prefHeight="25.0" prefWidth="123.0" promptText="Transmissions / Day" />
+                  <Label layoutX="14.0" layoutY="196.0" prefHeight="45.0" prefWidth="364.0" text="File Path Settings" textAlignment="CENTER" textFill="#1c3738" underline="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnApplySettings" layoutX="239.0" layoutY="156.0" mnemonicParsing="false" onAction="#changeSettings" text="Apply Settings" />
+                  <TextField fx:id="txtfldFileName" layoutX="14.0" layoutY="275.0" prefHeight="25.0" prefWidth="217.0" promptText="Enter File Name Here" />
+               </children>
+            </Pane>
+            <Pane fx:id="paneModView" prefHeight="751.0" prefWidth="1101.0" style="-fx-background-color: #8BAAAD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Module View" textFill="#1c3738">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <StackedBarChart fx:id="stkbrTDA" layoutX="587.0" layoutY="59.0" style="-fx-background-color: #FFFFFF;" title="Module Thirty Day Avg">
+                     <xAxis>
+                        <CategoryAxis fx:id="stkbrTDAx" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="stkbrTDAy" side="LEFT" />
+                     </yAxis>
                   </StackedBarChart>
                </children></Pane>
+            <Pane fx:id="paneHome" prefHeight="430.0" prefWidth="502.0" style="-fx-background-color: #8BAAAD;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <LineChart fx:id="lcTDA" layoutX="14.0" layoutY="59.0" legendVisible="false" style="-fx-background-color: #FFFFFF;" title="Moving Thirty Day Average">
+                    <xAxis>
+                      <NumberAxis fx:id="lcTDAx" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="lcTDAy" side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <Label layoutX="14.0" layoutY="14.0" text="Home" textFill="#1c3738">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+                  <LineChart fx:id="lcAnnualAvg" layoutX="587.0" layoutY="59.0" style="-fx-background-color: #FFFFFF;" title="Annual Average">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
       <AnchorPane layoutY="775.0" prefHeight="25.0" prefWidth="1275.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -109,7 +167,7 @@
                     <MenuItem mnemonicParsing="false" text="Delete" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu fx:id="mnuHelp" mnemonicParsing="false" text="Help">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />
                   </items>

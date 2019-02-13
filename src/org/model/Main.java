@@ -26,7 +26,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        System.out.println("Running: Big Horn Dam User Centre\n");
+        System.out.println("Running: Big Horn Dam User Centre");
         FXMLLoader loader = new FXMLLoader();
         // getClass().getResource("../view/Main.fxml")
         Parent root = loader.load(getClass().getResource("../view/Main.fxml"));

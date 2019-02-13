@@ -39,8 +39,11 @@ import javafx.scene.control.Label;
 public class GUIController
 {
 
+    private String defaultPath = "D:\\1. Programming\\GitHub\\BighornDam_UserCentre\\BighornDam_UserCentre\\src\\org\\model\\";
+    private String defaultName = "data.txt";
+
     @FXML
-    private Pane paneHome, paneModCon, pane3, pane4;
+    private Pane paneHome, paneModView, paneMapView, paneSettings;
 
     @FXML
     private AnchorPane anchr_1, anchrLeftHome;
@@ -52,19 +55,19 @@ public class GUIController
     private Accordion accLeftModCon;
 
     @FXML
-    private Button btnHome, btnModCon, btn3, btn4, btnReadFile;
-
-    @FXML
     private Menu mnu_edit, mnu_file, mnnu_help;
 
     @FXML
     private MenuItem mnu_file_btn;
 
     @FXML
-    private LineChart<Integer, Integer> lcTDA;
+    private TextField txtfldFilePath, txtfldFileName;
 
     @FXML
-    private NumberAxis brTDAy, brTDAx, stkbrTDAy;
+    private Button btnHome, btnModView, btnMapView, btnSettings, btnReadFile, btnApplySettings;
+
+    @FXML
+    private NumberAxis lcTDAy, lcTDAx, stkbrTDAy;
 
     @FXML
     private CategoryAxis stkbrTDAx;
@@ -72,60 +75,95 @@ public class GUIController
     @FXML
     private StackedBarChart<String, Integer> stkbrTDA;
 
+    @FXML
+    private LineChart<Integer, Integer> lcTDA;
+
 
 
 
     public void setPane(ActionEvent e){
-        System.out.println("You clicked on a button");
-
         if (e.getSource() == btnHome) {
+            System.out.println("Home Button Clicked");
             paneHome.toFront();
             anchrLeftHome.toFront();
         }
-        else if (e.getSource() == btnModCon){
-            paneModCon.toFront();
+        else if (e.getSource() == btnModView){
+            System.out.println("Module View Button Clicked");
+            paneModView.toFront();
             //accLeftModCon.toFront();
         }
-        else if (e.getSource() == btn3) {
-            pane3.toFront();
+        else if (e.getSource() == btnMapView) {
+            System.out.println("Map View Button Clicked");
+            paneMapView.toFront();
             anchrLeftHome.toFront();
         }
-        else if (e.getSource() == btn4) {
-            pane4.toFront();
+        else if (e.getSource() == btnSettings) {
+            System.out.println("Settings Button Clicked");
+            paneSettings.toFront();
             anchrLeftHome.toFront();
         }
     }
 
     @FXML
-    public void readFile(ActionEvent e){
-        System.out.println("Read File Clicked");
-                if (e.getSource() == btnReadFile){
-                }
+    public void changeSettings(ActionEvent e){
+        if (e.getSource() == btnReadFile){
+            System.out.println("Read File Button Clicked");
+            String fileP = txtfldFilePath.getText();
+            String fileN = txtfldFileName.getText();
+            System.out.println("Filename from textfield: " + fileN);
+            System.out.println("Filepath from textfield: " + fileP);
+
+            String empty = new String();
+            if (!fileP.equals(empty) && fileN.equals(empty))
+                System.out.println("New Filepath: " + fileP);
+            else if (fileP.equals(empty) && !fileN.equals(empty)) {
+                System.out.println("New Filename: " + fileN);
+                runInitialize(null, fileN);
+            }
+            else if (!fileP.equals(empty) && !fileN.equals(empty)) {
+                System.out.println("New File Path: " + fileP + ", New File Name: " + fileN);
+                runInitialize(fileP, fileN);
+            }
+        }
+        if (e.getSource() == btnApplySettings){
+            System.out.println("Apply Settings Button Clicked");
+        }
     }
 
-    public void initialize(){
+    private void runInitialize(String filepath, String filename){
         // parse file
-        String fileExt = "D:\\1. Programming\\GitHub\\BighornDam_UserCentre\\BighornDam_UserCentre\\src\\org\\model\\";
-        String filename = "data.txt";
-        parser prs = new parser(fileExt + filename);
+        if (filename == null)
+            filename = defaultName;
+        if (filepath == null)
+            filepath = defaultPath;
+        parser prs = new parser(filepath+filename);
+        // D:\1. Programming\GitHub\BighornDam_UserCentre\BighornDam_UserCentre\src\org\model\data.txt
+        // D:\1. Programming\GitHub\BighornDam_UserCentre\BighornDam_UserCentre\src\org\model\data.txt
         int arrTDA[][] = prs.parseThirtyDayTotal();
-        int arrNodeTDA[][][] = parser.parseNodeDataThirtyDays();
+        int arrNodeTDA[][][] = prs.parseNodeDataThirtyDays();
+//        int arrNodeAnnual[][][] = prs
         int meas = prs.getMeasPerDay();
         int tran = prs.getNumOfTrans();
-
-
-        // -- Thirty Day Avg Line Chart --
-        setTDALineChart(arrTDA, tran, meas);
-
-
-        // -- Thirty Day Avg Stacked Bar Chart --
-        setTDAModuleStackBar(arrTDA, tran, meas);
-
 
         // -- Status Label Alert --
         setStatusLabel(arrNodeTDA, tran, meas);
 
+        // -- Home - Thirty Day Avg Line Chart --
+        setTDALineChart(arrTDA, tran, meas);
+
+
+        // -- Mod View - Thirty Day Avg Stacked Bar Chart --
+        setTDAModuleStackBar(arrTDA, tran, meas);
+
+        // -- Home - Annual Average Line Chart --
+        setAnnualLineChart(arrTDA, tran, meas);
+
+
         // end
+    }
+
+    public void initialize(){
+        runInitialize(defaultPath, defaultName);
     }
 
     private void setTDAModuleStackBar(int arr[][], int tran, int meas){
@@ -211,10 +249,10 @@ public class GUIController
 
     private void setTDALineChart(int arr[][], int tran, int meas){
         // set chart axis
-        brTDAx.setAutoRanging(false);
-        brTDAx.setLowerBound(0);
-        brTDAx.setUpperBound(29);
-        brTDAx.setTickUnit(1);
+        lcTDAx.setAutoRanging(false);
+        lcTDAx.setLowerBound(0);
+        lcTDAx.setUpperBound(29);
+        lcTDAx.setTickUnit(1);
             /*brTDAy.setAutoRanging(false);
             brTDAy.setLowerBound(0);
             brTDAy.setUpperBound(1000);
@@ -256,5 +294,7 @@ public class GUIController
             statusLabel.setText("All Nodes Working Properly");
     }
 
+    private void setAnnualLineChart(int arr[][], int tran, int meas){
 
+    }
 }
